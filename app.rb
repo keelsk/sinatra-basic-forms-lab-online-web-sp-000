@@ -5,5 +5,12 @@ class App < Sinatra::Base
     erb :index
   end
   
-  post '/'
+  get '/create_puppy'
+    erb :create_puppy
+  end
+  
+  post '/puppy' do 
+    @new_puppy = Puppy.new()
+    erb :display_puppy
+  end
 end
